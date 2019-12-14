@@ -1,0 +1,79 @@
+:root {
+	/* COLORS & FONTS */
+		--color-primary: rgb(63,218,255);
+		--color-secondary: rgb(25,27,29);
+		--color-tertiary: rgb(25,27,29);
+		--color-black: rgb(25,27,29);
+		--color-dark-grey: rgb(125,127,129);
+		--color-light-grey: rgb(175,177,179);
+		--color-white: rgb(255,255,255);
+		--font-primary: "Bebas";
+		--font-primary-weight: 400;
+		--font-secondary: "Quicksand";
+		--font-secondary-weight: 800;
+		--font-tertiary: "Quicksand";
+		--font-tertiary-weight: 800;
+		--font-xxs: 1rem;
+		--font-xs: 1.25rem;
+		--font-s: 1.5rem;
+		--font-m: 1.75rem;
+		--font-l: 2rem;
+		--font-xl: 2.5rem;
+	/* CONTAINERS ETC. */
+		--max-width-container: 1200px;	
+	/* BORDERS & BOX SHADOWS */
+		--box-shadow: 0 0 5px 1px var(--color-black);
+		--box-shadow-bottom: 0 5px 5px -3px var(--color-black);
+		--box-shadow-bottom-right: 2px 2px 5px -2px var(--color-black);
+	/* TRANSITIONS */
+		--transition-speed: 250ms;
+	/* LOADING PAGE */
+		--loading-screen-bgcolor: var(--color-white);
+	/* HEADER */
+		--header-bgcolor: var(--color-white);
+		--header-box-shadow: var(--box-shadow); /* 'none' or '[var(--)]' */
+		--header-position: fixed; /* 'sitcky' or 'fixed' */
+		--logo-name-color: var(--color-black);
+		--logo-name-font-family: var(--font-primary);
+		--logo-name-font-size: 20px;
+		--logo-name-word-spacing: normal; /* 'normal' or '[value]' */
+		--logo-name-letter-spacing: 2.5px; /* 'normal' or '[value]' */
+	/* NAVBARS */
+		/* ALL NAVBARS */
+			--navbar-font-family: var(--font-primary);
+			--navbar-font-size: var(--font-m);
+			--navbar-color: var(--color-black);
+			--navbar-word-spacing: 2.5px; /* 'normal' or '[value]' */
+			--navbar-letter-spacing: normal; /* 'normal' or '[value]' */
+			--navbar-submenu-font-family: var(--font-primary);
+			--navbar-submenu-font-size: var(--font-xs);
+			--navbar-submenu-color: var(--color-dark-grey);
+			--navbar-hover-color: var(--color-primary);
+			--navbar-current-page-color: var(--navbar-hover-color);
+			--navbar-menu-icon-bgcolor: var(--color-black);
+			--navbar-slider-bgcolor: var(--header-bgcolor);
+		/* BUTTONS SIMPLE & BUTTONS UNDERLINE */
+			--navbar-submenu-bgcolor: var(--color-white);
+			--navbar-submenu-box-shadow: var(--box-shadow-bottom); /* 'none' or '[var(--)]' */
+		/* BUTTONS UNDERLINE */
+			--navbar-buttons-underline-thickness: 2px;
+			--navbar-buttons-underline-color: var(--navbar-hover-color);
+			--navbar-current-page-underline-color: var(--navbar-buttons-underline-color);
+		/* BUTTONS BLOCK */
+			--navbar-buttons-bgcolor: var(--color-white);
+			--navbar-buttons-border-thickness: 2px;
+			--navbar-buttons-border-radius: 500px;
+			--navbar-buttons-border-color: var(--color-black);
+			--navbar-submenu-buttons-bgcolor: var(--navbar-buttons-bgcolor);
+			--navbar-submenu-buttons-border-color: var(--color-dark-grey);
+			--navbar-current-page-border-color: var(--navbar-current-page-color);
+			--navbar-buttons-border-hover-color: var(--navbar-hover-color);
+			--navbar-buttons-box-shadow: var(--box-shadow-bottom-right); /* 'none' or '[var(--)]' */
+	/* FOOTER */
+		--footer-logo-width: 50px;
+		--footer-logo-name-color: var(--logo-name-color);
+		--footer-logo-name-font-family: var(--logo-name-font-family);
+		--footer-logo-name-font-size: 25px;
+		--footer-logo-name-word-spacing: normal; /* 'normal' or '[value]' */
+		--footer-logo-name-letter-spacing: 5px; /* 'normal' or '[value]' */
+}
