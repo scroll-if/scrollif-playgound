@@ -1,4 +1,5 @@
----
----
+{% capture date %}
+			{{ site.time | date: '%Y' }}
+		{% endcapture %}
 
-{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html %}
+		{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html date=date %}
