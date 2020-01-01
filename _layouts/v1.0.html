@@ -21,11 +21,11 @@
 
 <body class="no-js">
 
-	{% capture date %}
-		{{ site.url }}
-	{% endcapture %}
-
 	{% include powered-by.html date=date %}
+
+		{% capture date %}
+			{{ site.time | date: '%Y' }}
+		{% endcapture %}
 
 </body>
 </html> 
