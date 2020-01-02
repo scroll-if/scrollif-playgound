@@ -4,4 +4,5 @@ group :jekyll_plugins do
   gem 'jekyll-menus'
   gem 'jekyll-minifier'
   gem 'jekyll-remote-include'
+  gem 'test'
 end
