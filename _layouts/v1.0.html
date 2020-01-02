@@ -25,9 +25,8 @@
 			{{ site.time | date: '%Y' }}
 		{% endcapture %}
 
-		{% assign url = 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' %}
 
-	{% include_remote {{ url }} date=date %}
+	{% include_remote 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' date=date %}
 
 		
 
