@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'net/http'
 require 'uri'
 
 class Jekyll::IncludeRemoteTag < Jekyll::Tags::IncludeTag
@@ -30,7 +31,7 @@ eos
   end
 
   def render(context)
-    @url = render_variable(context) || @url
+    @url = open("#{@include_remote}") || @url
     validate_url(@url)
 
     if @params
