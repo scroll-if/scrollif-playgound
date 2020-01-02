@@ -1,6 +1,8 @@
+# https://gist.github.com/kilianc/a6d87879735d4a68b34f
+# https://stackoverflow.com/questions/14958294/including-external-files-in-a-jekyll-template
+
 require 'nokogiri'
 require 'open-uri'
-require 'net/http'
 require 'uri'
 
 class Jekyll::IncludeRemoteTag < Jekyll::Tags::IncludeTag
@@ -31,7 +33,7 @@ eos
   end
 
   def render(context)
-    @url = open("#{@include_remote}") || @url
+    @url = render_variable(context) || @url
     validate_url(@url)
 
     if @params
