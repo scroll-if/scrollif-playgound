@@ -4,7 +4,7 @@ require 'uri'
 module Jekyll
 
   class RemoteInclude < Liquid::Tag
-
+=begin
     VALID_SYNTAX = %r!
       ([\w-]+)\s*=\s*
       (?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.-]+))
@@ -17,17 +17,17 @@ module Jekyll
     FULL_VALID_SYNTAX = %r!\A\s*(?:#{VALID_SYNTAX}(?=\s|\z)\s*)*\z!.freeze
     VALID_FILENAME_CHARS = %r!^[\w/\.-]+$!.freeze
     INVALID_SEQUENCES = %r![./]{2,}!.freeze
-
+=end
     def initialize(tag_name, remote_include, tokens)
       super
-      matched = markup.strip.match(VARIABLE_SYNTAX)
-      if matched
-        @file = matched["variable"].strip
-        @params = matched["params"].strip
-      else
-        @file, @params = markup.strip.split(%r!\s+!, 2)
-      end
-      validate_params if @params
+#      matched = markup.strip.match(VARIABLE_SYNTAX)
+#      if matched
+#        @file = matched["variable"].strip
+#        @params = matched["params"].strip
+#      else
+#        @file, @params = markup.strip.split(%r!\s+!, 2)
+#      end
+#      validate_params if @params
       @remote_include = remote_include
     end
 =begin
