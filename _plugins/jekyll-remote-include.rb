@@ -30,7 +30,7 @@ module Jekyll
       validate_params if @params
       @remote_include = remote_include
     end
-
+=begin
     def parse_params(context)
       params = {}
       markup = @params
@@ -50,7 +50,7 @@ module Jekyll
       end
       params
     end
-
+=end
     def open(url)
       Net::HTTP.get(URI.parse(url.strip)).force_encoding 'utf-8'
     end
