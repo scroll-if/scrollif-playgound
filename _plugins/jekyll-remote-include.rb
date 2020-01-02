@@ -1,65 +1,72 @@
-require 'net/http'
+require 'nokogiri'
+require 'open-uri'
 require 'uri'
 
-module Jekyll
+class Jekyll::IncludeRemoteTag < Jekyll::Tags::IncludeTag
+  @@remote_cache = {}
 
-  class RemoteInclude < Liquid::Tag
-=begin
-    VALID_SYNTAX = %r!
-      ([\w-]+)\s*=\s*
-      (?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.-]+))
-    !x.freeze
-    VARIABLE_SYNTAX = %r!
-      (?<variable>[^{]*(\{\{\s*[\w\-\.]+\s*(\|.*)?\}\}[^\s{}]*)+)
-      (?<params>.*)
-    !mx.freeze
+  def initialize(tag_name, markup, tokens)
+    super
+    @url = @file
+  end
 
-    FULL_VALID_SYNTAX = %r!\A\s*(?:#{VALID_SYNTAX}(?=\s|\z)\s*)*\z!.freeze
-    VALID_FILENAME_CHARS = %r!^[\w/\.-]+$!.freeze
-    INVALID_SEQUENCES = %r![./]{2,}!.freeze
-=end
-    def initialize(tag_name, remote_include, tokens)
-      super
-#      matched = markup.strip.match(VARIABLE_SYNTAX)
-#      if matched
-#        @file = matched["variable"].strip
-#        @params = matched["params"].strip
-#      else
-#        @file, @params = markup.strip.split(%r!\s+!, 2)
-#      end
-#      validate_params if @params
-      @remote_include = remote_include
+  def validate_url(url)
+    if url !~ URI::regexp
+      raise ArgumentError.new <<-eos
+Invalid syntax for include_remote tag. URL contains invalid characters or sequences:
+
+#{url}
+
+Valid syntax:
+
+#{syntax_example}
+
+eos
     end
-=begin
-    def parse_params(context)
-      params = {}
-      markup = @params
+  end
 
-      while (match = VALID_SYNTAX.match(markup))
-        markup = markup[match.end(0)..-1]
+  def syntax_example
+    "{% #{@tag_name} http://domain.ltd css=\".menu\" xpath=\"//div[@class='.menu']\" param=\"value\" param2=\"value\" %}"
+  end
 
-        value = if match[2]
-                  match[2].gsub('\\"', '"')
-                elsif match[3]
-                  match[3].gsub("\\'", "'")
-                elsif match[4]
-                  context[match[4]]
-                end
+  def render(context)
+    @url = render_variable(context) || @url
+    validate_url(@url)
 
-        params[match[1]] = value
+    if @params
+      validate_params
+      @params = parse_params(context)
+    end
+
+    xpath = @params['xpath']
+    css = @params['css']
+
+    if ! html = @@remote_cache["#{@url}_#{xpath}"]
+      # fetch remote file
+      page = Nokogiri::HTML(open(@url))
+
+      # parse extract xpath/css fragments if necessary
+      node = page.at_xpath(xpath) if xpath
+      node = page.css(css) if css
+      node = page if !node
+
+      raise IOError.new "Error while parsing remote file '#{@url}': '#{xpath||css}' not found" if !node
+
+      # cache result
+      html = @@remote_cache["#{@url}_#{xpath}"] = node.to_s
+    end
+
+    begin
+      partial = Liquid::Template.parse(html)
+
+      context.stack do
+        context['include'] = @params
+        partial.render!(context)
       end
-      params
+    rescue => e
+      raise Jekyll::Tags::IncludeTagError.new e.message, @url
     end
-=end
-    def open(url)
-      Net::HTTP.get(URI.parse(url.strip)).force_encoding 'utf-8'
-    end
-
-    def render(context)
-      open("#{@remote_include}")
-    end
-
   end
 end
 
-Liquid::Template.register_tag('remote_include', Jekyll::RemoteInclude)
+Liquid::Template.register_tag('include_remote', Jekyll::IncludeRemoteTag)
