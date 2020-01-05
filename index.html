@@ -16,21 +16,16 @@ author-facebook:
 author-twitter: 
 ---
 
-<section class="cover bgpos-50-50 pt-70" style="background-image: url({{ site.url }}/assets/images/manhattan_skyline.jpg);">
-	<div class="text-center font-primary color-black">
-		<div style="padding: 15vh 0; text-shadow:var(--dark-grey) 0.1vmin 0.1vmin 0.1vmin;">
-			<p style="font-size: 5vmin; letter-spacing: 1vw; padding-left: 1vw; margin: 1vh 0;">I am</p>
-			<h1 style="font-size: 10vmin; letter-spacing: 2vw; padding-left: 2vw; margin: 2vh 0;">Blake Davies</h1>
-			<p class="color-primary" style="font-size: 5vmin; letter-spacing: 1vw; padding-left: 1vw; margin: 1vh 0;">Web Developer &</p>
-			<p class="color-primary" style="font-size: 5vmin; letter-spacing: 1vw; padding-left: 1vw; margin: 1vh 0;">Graphic Designer</p>
-		</div>
-		<div class="arrow-down-5vh-white">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	</div>
-</section>
+<div style="height: 100vh; width: 100%; background-color: #FFFFFF; background-size: 20px 20px; background-position: 0 0, 10px 10px; background-image: linear-gradient(45deg, #CED4D3 25%, transparent 25%, transparent 75%, #CED4D3 75%, #CED4D3), linear-gradient(45deg, #CED4D3 25%, transparent 25%, transparent 75%, #CED4D3 75%, #CED4D3);">
+	<div style="position: absolute; bottom: 0; width: 100%;">
 
-<div style="height:100vh;">
-</div> 
+		{% assign powered-by = 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' %}
+
+		{% capture date %}
+			{{ site.time | date: '%Y' }}
+		{% endcapture %}
+
+		{% include_remote {{ powered-by }} date=date %}
+
+	</div>
+</div>
