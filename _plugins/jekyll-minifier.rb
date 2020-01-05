@@ -1,3 +1,5 @@
+# https://github.com/digitalsparky/jekyll-minifier
+
 require 'uglifier'
 require 'htmlcompressor'
 require 'cssminify2'
