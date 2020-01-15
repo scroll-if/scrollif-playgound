@@ -5,6 +5,6 @@ gem 'github-pages'
 # gem 'jekyll-remote-include', git: 'https://github.com/scroll-if/scrollif-assets', glob: 'websites/jekyll-plugins/jekyll-remote-include/jekyll-remote-include.gemspec'
 
 git "https://github.com/scroll-if/scrollif-assets.git" do
-  gem 'websites/jekyll-plugins/include_remote'
+  gem 'include_remote'
 #  gem 'websites/jekyll-plugins/jekyll-remote-include'
 end
