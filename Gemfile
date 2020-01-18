@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem 'jekyll'
+gem 'github-pages'
 
 git "https://github.com/scroll-if/scrollif-assets.git" do
   gem 'include_remote'
