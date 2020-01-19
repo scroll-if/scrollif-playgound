@@ -4,7 +4,7 @@ twitter:
 markdown: kramdown
 plugins_dir: _plugins
 plugins:
-  include_remote
+  - include_remote
 data_dir: _data
 layouts_dir: _layouts
 includes_dir: _includes
