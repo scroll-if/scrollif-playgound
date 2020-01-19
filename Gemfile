@@ -14,4 +14,4 @@ gem 'nokogiri'
 
 #gem 'include_remote', git: 'https://github.com/scroll-if/scrollif-assets'
 
-gem install 'include_remote', :git => 'https://github.com/scroll-if/scrollif-assets.git'
+#gem 'include_remote', :git => 'https://github.com/scroll-if/scrollif-assets.git'
