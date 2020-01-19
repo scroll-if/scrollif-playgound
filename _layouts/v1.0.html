@@ -23,5 +23,14 @@
 
 	{{ content }}
 
+
+	{% capture date %}
+		{{ site.time | date: '%Y' }}
+	{% endcapture %}
+	
+	{% assign powered-by = 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' %}
+
+	{% include_remote {{ powered-by }} date=date %}
+
 </body>
 </html> 
