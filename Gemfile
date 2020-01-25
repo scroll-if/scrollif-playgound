@@ -5,4 +5,4 @@ group :jekyll_plugins do
   gem 'jekyll-minifier'
   gem 'jekyll-remote-include'
 end
-gem specific_install 'https://github.com/scroll-if/scrollif-assets -d src/websites/jekyll-plugins/include_remote'
+gem 'include_remote', git: 'https://github.com/scroll-if/scrollif-assets' glob: 'websites/jekyll-plugins/include_remote/include_remote.gemspec'
