@@ -1,3 +1,3 @@
-$(document).ready(function () {
-	$(".no-js").removeClass("no-js");
-});
+---
+---
+{% remote_include https://scrollif-assets.netlify.com/websites/js/no-js.js %}
