@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	{% include meta-data.html %}
+
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/concatenated.css"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+	
+	<script src="{{ site.url }}/assets/js/concatenated.js" type="text/javascript"></script>
+
+	<style>
+		:root {
+			--site-url: {{ site.url }};
+		}
+	</style>
+
+</head>
+
+<body class="no-js">
+
+	{{ content }}
+
+
+	{% capture date %}
+		{{ site.time | date: '%Y' }}
+	{% endcapture %}
+	
+	{% assign powered-by = 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' %}
+
+	{% include_remote {{ powered-by }} date=date %}
+
+</body>
+</html> 
