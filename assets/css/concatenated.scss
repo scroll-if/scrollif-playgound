@@ -1,4 +1,8 @@
 ---
 ---
-{% remote_include https://scrollif-assets.netlify.com/websites/css/reset-css.scss %}
-{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by/css/powered-by.scss %}
+{% assign reset-css = 'https://scrollif-assets.netlify.com/websites/css/reset-css.scss' %}
+{% include_remote {{ reset-css }} %}
+
+{% assign powered-by-css = 'https://scrollif-assets.netlify.com/websites/components/powered-by/css/powered-by.scss' %}
+{% include_remote {{ powered-by-css }} %}
+
