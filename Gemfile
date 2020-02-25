@@ -2,4 +2,4 @@ source "https://rubygems.org"
 gem 'jekyll'
 gem 'nokogiri'
 
-gem 'remote_include', :git => "https://github.com/scroll-if/scrollif-assets", :branch => "jekyll_plugins--remote_include"
+gem 'remote_include', :git => "https://github.com/scroll-if/scrollif-assets", :branch => "jekyll_plugin--remote_include"
