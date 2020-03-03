@@ -3,7 +3,12 @@
 
 <head>
 
-	{% include test.html | liquefy %}
+	{% capture test %}
+		{% include test.html %}
+	{% endcapture %}
+
+
+	{% test | liquefy %}
 
 	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/concatenated.css"/>
 
