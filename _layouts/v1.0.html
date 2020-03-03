@@ -3,12 +3,7 @@
 
 <head>
 
-	{% capture test %}
-		{% remote_include https://scrollif-assets.netlify.com/websites/html/meta-tags.html %}
-	{% endcapture %}
-
-
-	{{ test | liquify }}
+	{% remote_include https://scrollif-assets.netlify.com/websites/html/meta-tags.html | liquify %}
 
 	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/concatenated.css"/>
 
