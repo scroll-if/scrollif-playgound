@@ -3,7 +3,7 @@
 
 <head>
 
-	{% remote_include https://scrollif-assets.netlify.com/websites/html/meta-tags.html %}
+	{% include test.html | liquefy %}
 
 	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/concatenated.css"/>
 
