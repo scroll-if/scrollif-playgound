@@ -2,13 +2,15 @@
 ---
 {% capture concatenated-scss %}
 	@import 'fonts';
+	{% remote_include https://scrollif-assets.netlify.com/websites/css/reset-css.scss %}
 	@import 'reset-css';
 	:root {
-		@import 'default-variables';
+		{% remote_include https://scrollif-assets.netlify.com/websites/css/default-variables.scss %}
 		@import 'variables';
 	}
-	@import 'external-components';
-	@import 'utility-css';
+	{% remote_include https://scrollif-assets.netlify.com/websites/components/loading-screen/css/loading-screen.scss %}
+	{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by-scroll-if/css/powered-by-scroll-if.scss %}
+	{% remote_include https://scrollif-assets.netlify.com/websites/css/utility-scss.scss %}
 	@import 'media-queries';
 {% endcapture  %}
 
