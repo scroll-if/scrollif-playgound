@@ -1,6 +1,6 @@
 ---
 ---
-{{ capture concatenated-scss }}
+{% capture concatenated-scss %}
 	@import 'fonts';
 	@import 'reset-css';
 	:root {
@@ -10,6 +10,6 @@
 	@import 'external-components';
 	@import 'utility-css';
 	@import 'media-queries';
-{{ endcapture  }}
+{% endcapture  %}
 
 {{ concatenated-scss | liquify }}
