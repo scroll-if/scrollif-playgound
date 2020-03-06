@@ -1,4 +1,11 @@
 ---
 ---
-{% remote_include https://scrollif-assets.netlify.com/websites/css/reset-css.scss %}
-{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by/css/powered-by.scss %}
+@import 'fonts';
+@import 'reset-css';
+:root {
+	@import 'default-variables';
+	@import 'variables';
+}
+@import 'external-components';
+@import 'utility-css';
+@import 'media-queries';
