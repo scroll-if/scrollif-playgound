@@ -7,7 +7,11 @@
 
 		<!-- Meta Tag are referenced from scrollif-assets and populated using Site Variables from _congif.yml and page's YAML Front Matter -->
 
-		
+		{% capture meta-tags-html %}
+			{% remote_include https://scrollif-assets.netlify.com/websites/html/meta-tags.html %}
+		{% endcapture %}
+
+		{{ meta-tags-html | liquify }}
 
 	<!-- ASSETS -->
 
@@ -42,13 +46,7 @@
 
 		<!-- Capture the current year, insert it into the included remote asset from scrollif-assets using the include parameter -->
 
-		{% capture current-year %}
-			{{ site.time | date: '%Y' }}
-		{% endcapture %}
 		
-		{% assign powered-by-html = 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' %}
-
-		{% include_remote {{ powered-by-html }} published-year=current-year %}
 
 </body>
 </html> 
