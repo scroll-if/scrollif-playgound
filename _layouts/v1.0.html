@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!-- META TAGS -->
+
+		<!-- Meta Tag are referenced from scrollif-assets and populated using Site Variables from _congif.yml and page's YAML Front Matter -->
+
+		{% capture meta-tags-html %}
+			{% remote_include https://scrollif-assets.netlify.com/websites/html/meta-tags.html %}
+		{% endcapture %}
+
+		{{ meta-tags-html | liquify }}
+
+	<!-- ASSETS -->
+
+		<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/concatenated.css"/>
+		<!-- Local CSS files stored in _saas folder and external CSS files from scrollif-assets are compiled into a single CSS file (concatenated.scss) before being processed, minimising HTTP requests -->
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+		<!-- TO DO - CAN THIS BE LOADED USING REMOTE INCLUDE IN CONCATENATED.JS MAYBE? -->
+
+
+		<script src="{{ site.url }}/assets/js/concatenated.js" type="text/javascript"></script>
+		<!-- External JS scripts from scrollif-assets are compiled into a single JS script (concatenated.js) before being processed, minimising HTTP requests -->
+
+	<!-- STYLES -->
+
+		<!-- TO DO - WHY IS THIS HERE AGAIN? -->
+
+		<style>
+			:root {
+				--site-url: {{ site.url }};
+			}
+		</style>
+
+</head>
+
+<body class="no-js"> <!-- Prepend body.no-js to fallback CSS classes for all cases where JS is used for browsers or cases where scripts aren't automatically run.  This class is removed using JS on document ready state-->
+
+	{{ content }}
+
+	<!-- POWERED-BY SCROLL IF -->
+
+		<!-- Capture the current year, insert it into the included remote asset from scrollif-assets using the include parameter -->
+
+		{% capture current-year %}
+			{{ site.time | date: '%Y' }}
+		{% endcapture %}
+		
+		{% assign powered-by-html = 'https://scrollif-assets.netlify.com/websites/components/powered-by/html/powered-by.html' %}
+
+		{% include_remote {{ powered-by-html }} published-year=current-year %}
+
+</body>
+</html> 
