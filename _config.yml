@@ -9,7 +9,6 @@ includes_dir: _includes
 sass:
   sass_dir: assets/css/_sass
   style: expanded
-  sourcemap: never
 collections:
   navigation:
     output: true 
