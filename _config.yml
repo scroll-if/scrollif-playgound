@@ -8,7 +8,8 @@ layouts_dir: _layouts
 includes_dir: _includes
 sass:
   sass_dir: assets/css/_sass
-  style: compressed
+  style: expanded
+  source-map: none
 collections:
   navigation:
     output: true 
