@@ -1,7 +1,6 @@
 .test {
 	color: black;
 }
-@import url("https://blakedavies.net/css/index.css")
-/*
 
-*/
+
+#{'{% remote_include https://scrollif-assets.netlify.com/websites/css/reset-css.scss %}'}
