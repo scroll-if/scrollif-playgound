@@ -3,11 +3,11 @@
 /* RESET CSS */
 /*	{% remote_include https://scrollif-assets.netlify.com/websites/css/reset-css.scss %} */
 /* DEFAULT VARIABLES */
-	{% remote_include https://scrollif-assets.netlify.com/websites/css/default-variables.scss %}
+/*	{% remote_include https://scrollif-assets.netlify.com/websites/css/default-variables.scss %} */
 	@import "variables";
 /* EXTERNAL COMPONENTS */
-	{% remote_include https://scrollif-assets.netlify.com/websites/components/loading-screen/css/loading-screen.scss %}
-	{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by-scroll-if/css/powered-by-scroll-if.scss %}
+/*	{% remote_include https://scrollif-assets.netlify.com/websites/components/loading-screen/css/loading-screen.scss %} */
+/*	{% remote_include https://scrollif-assets.netlify.com/websites/components/powered-by-scroll-if/css/powered-by-scroll-if.scss %} */
 
 /* @import "navbarTEST"; */
 /* @import "utilityTEST"; */	
