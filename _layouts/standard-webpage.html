@@ -45,7 +45,7 @@
 	<!-- HEADER TESTING -->	
 
 		{% capture header-html %}
-			{% remote_include https://scrollif-assets.netlify.com/websites/components/header/header.html %}
+			{% remote_include https://scrollif-assets.netlify.app/websites/components/header/header.html %}
 		{% endcapture %}
 
 		{{ header-html | liquify }}
@@ -62,7 +62,7 @@
 				{{ site.time | date: '%Y' }}
 			{% endcapture %}
 			
-			{% assign powered-by-scroll-if-html = 'https://scrollif-assets.netlify.com/websites/components/powered-by-scroll-if/html/powered-by-scroll-if.html' %}
+			{% assign powered-by-scroll-if-html = 'https://scrollif-assets.netlify.app/websites/components/powered-by-scroll-if/html/powered-by-scroll-if.html' %}
 
 			{% include_remote {{ powered-by-scroll-if-html }} published-year=current-year %}
 
