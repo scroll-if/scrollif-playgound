@@ -1,4 +1,4 @@
-# scrollif-playgound.netlify.app
-Scroll If's development environment for testing and building new features
+# scrollif.netlify.com
+Scroll If's main website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/16d3fd9d-2af6-45ec-afcf-72df44f2a5b6/deploy-status)](https://app.netlify.com/sites/scrollif-playground/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f91b90c4-7d75-44a7-8bc8-93a3f53d39df/deploy-status)](https://app.netlify.com/sites/scrollif/deploys)

@@ -2,8 +2,20 @@
 ---
 /* RESET CSS */
 	{% remote_include https://scrollif-assets.netlify.app/websites/css/reset-css.scss %}
-/* DEFAULT VARIABLES */
+
+/* FONTS */
+	@import "fonts";
+
+/* CSS VARIABLES */
 	{% remote_include https://scrollif-assets.netlify.app/websites/css/default-variables.scss %}
+	@import "variables";
+
+/* UTILITY CSS */
+	@import "utility";	
+
 /* EXTERNAL COMPONENTS */
 	{% remote_include https://scrollif-assets.netlify.app/websites/components/loading-screen/css/loading-screen.scss %}
 	{% remote_include https://scrollif-assets.netlify.app/websites/components/powered-by-scroll-if/css/powered-by-scroll-if.scss %}
+
+/* MAIN CSS */
+	@import "main";

@@ -15,10 +15,12 @@
 
 	<!-- ASSETS --> 
 
-		<!-- Local CSS files stored in _saas folder and external CSS files from scrollif-assets are compiled into a single CSS file (concatenated.scss) before being processed, minimising HTTP requests -->
+		<!-- Local CSS files stored in _partials folder along with external CSS files from scrollif-assets are compiled into a single CSS file (concatenated.scss) before being processed, minimising HTTP requests -->
 
 			<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/concatenated.css"/>
 		
+		<!-- Base JS Library from Google APIs -->
+
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
 		
 		<!-- External JS scripts from scrollif-assets are compiled into a single JS script (concatenated.js) before being processed, minimising HTTP requests -->
@@ -38,7 +40,7 @@
 
 </head>
 
-<body class="no-js"> <!-- Prepend body.no-js to fallback CSS classes for all cases where JS is used for browsers or cases where scripts aren't automatically run.  This class is removed using JS on document ready state-->
+<body class="no-js"> <!-- "no-js" class is removed using JS on document ready state, CSS classes Prepended with "body.no-js" are added as fallbacks where JS is used for browsers or use cases where JS is not allowed to run by default. -->
 
 	{{ content }}
 
