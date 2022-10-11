@@ -1,6 +1,6 @@
-title: Scroll If
-url: https://scrollif.com.au
-twitter: @scrollif
+title: Scroll If Playground
+url: https://scrollif-playground.netlify.app
+twitter:
 markdown: kramdown
 plugins_dir: _plugins
 data_dir: _data
